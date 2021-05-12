@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import Student from '../models/student';
+import { sendNotification } from '../util/sendNotification';
 
 export const postDiagnosis = async (
   req: Request,
@@ -16,10 +17,12 @@ export const postDiagnosis = async (
 
   try {
     await newStudent.save();
+    await sendNotification(name).catch((err) => console.log(err));
   } catch (error) {
     return res.status(500).json({
       message: 'Wysyłanie nie powiodło się, spróbuj ponownie później',
     });
   }
+
   return res.status(201).json({ message: 'diagnosis posted' });
 };

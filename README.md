@@ -20,6 +20,7 @@ This contains saving the test to database, retriving list of all students with t
 - [Express](https://github.com/expressjs/express) v4.17.1
 - [Mongoose](https://github.com/Automattic/mongoose) v5.12.2
 - [Passport](https://github.com/jaredhanson/passport) v0.4.1
+- [Nodemailer](https://github.com/nodemailer/nodemailer) v6.6.0
 
 ## Setup
 
@@ -38,6 +39,13 @@ then, you will need to create a **nodemon.json** file, containing **"env"** obje
 - "JWT_STRING": jwt token secret string
 - "VERIFICATION_STR": a string to give to users that are allowed to register
 - "WEBSITE_URL": fronted site address, for CORS
+
+Additionally, if you want mailing notifications to work:
+
+- "MAILING_LIST": string with comma-separated email adresses, where to send notification
+- "EMAIL_HOST": string with smtp email provider
+- "EMAIL_USER": email adress
+- "EMAIL_PASS": email password
 
 Finally, run it using npm:
 
