@@ -15,6 +15,6 @@ export const sendNotification = async (username: string) => {
     from: 'Knowyourvocab',
     to: `${process.env.MAILING_LIST}`,
     subject: `${username} uzupełniła diagnozę!`,
-    html: `<a href="https://knowyourvocab.netlify.app/admin/students/${username}">Sprawdź wyniki tutaj</a>`,
+    text: `${username} właśnie wysłała diagnozę! Sprawdź dokładne wyniki w panelu administratora`,
   });
 };
