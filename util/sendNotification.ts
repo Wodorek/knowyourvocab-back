@@ -12,11 +12,8 @@ export const sendNotification = async (username: string) => {
   });
 
   let info = await transporter.sendMail({
-    envelope: {
-      from: '<knowyourvocab@gmail.com>',
-      to: `${process.env.MAILING_LIST}`,
-    },
-
+    from: '<knowyourvocab@gmail.com>',
+    to: `${process.env.MAILING_LIST}`,
     subject: `${username} uzupełniła diagnozę!`,
     text: `${username} właśnie wysłała diagnozę! Sprawdź dokładne wyniki w panelu administratora:`,
   });
